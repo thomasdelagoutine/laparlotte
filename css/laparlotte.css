@@ -1,0 +1,37 @@
+@font-face {
+    font-family: paraFont;
+    src: url(HipsterishFontNormal.ttf);
+}
+
+.parlotte-title {
+    font-family: paraFont;
+    font-size: 38pt;
+    font-weight: 100;
+}
+
+.parlotte-sub-title {
+    font-family: paraFont;
+    font-size: 20pt;
+    font-weight: 100;
+}
+
+.parlotte-intro {
+    font-family: paraFont;
+    font-size: 22pt;
+}
+
+.parlotte-para-justify {
+    text-align: justify;
+    font-family: paraFont;
+
+}
+
+.parlotte-header-title {
+    font-family: paraFont;
+}
+
+.parlotte-menu{
+    font-family: paraFont;
+    font-size: 18pt;
+    font-weight: bolder;
+}
