@@ -45,6 +45,9 @@
     border:dashed 2px #41403e;
 }
 
+.parlotte-col{
+    margin-top: 100px;
+}
 
 .parlotte-liste{
     font-family: paraFont;
@@ -63,6 +66,10 @@
     font-weight: bolder;
 }
 
+.parlotte-image-col{
+    width: 100%;
+    height: 100%;
+}
 
 /*!
  * Start Bootstrap - Grayscale v4.0.0-beta (http://startbootstrap.com/template-overviews/grayscale)
