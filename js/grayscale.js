@@ -53,7 +53,7 @@ function init() {
     zoom: 15,
 
     // The latitude and longitude to center the map (always required)
-    center: new google.maps.LatLng(43.603280, 1.456058), // Toulouse
+    center: new google.maps.LatLng(43.597397, 1.448164), // Toulouse
 
     // Disables the default Google Maps UI components
     disableDefaultUI: true,
@@ -181,7 +181,7 @@ function init() {
 
   // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
   var image = 'img/map-marker.svg';
-  var myLatLng = new google.maps.LatLng(43.603280, 1.456058);
+  var myLatLng = new google.maps.LatLng(43.597397, 1.448164);
   var beachMarker = new google.maps.Marker({
     position: myLatLng,
     map: map,
