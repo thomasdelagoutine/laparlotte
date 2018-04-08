@@ -42,7 +42,7 @@ var map = null;
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', init);
 google.maps.event.addDomListener(window, 'resize', function() {
-  map.setCenter(new google.maps.LatLng(43.603280, 1.456058));
+  map.setCenter(new google.maps.LatLng(43.489006, 2.356178));
 });
 
 function init() {
@@ -53,12 +53,12 @@ function init() {
     zoom: 15,
 
     // The latitude and longitude to center the map (always required)
-    center: new google.maps.LatLng(43.597397, 1.448164), // Toulouse
+    center: new google.maps.LatLng(43.489006, 2.356178), // Aussillon
 
     // Disables the default Google Maps UI components
     disableDefaultUI: true,
-    scrollwheel: false,
-    draggable: false,
+    scrollwheel: true,
+    draggable: true,
 
     // How you would like to style the map.
     // This is where you would paste any style found on Snazzy Maps.
@@ -181,7 +181,7 @@ function init() {
 
   // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
   var image = 'img/map-marker.svg';
-  var myLatLng = new google.maps.LatLng(43.597397, 1.448164);
+  var myLatLng = new google.maps.LatLng(43.489006, 2.356178);
   var beachMarker = new google.maps.Marker({
     position: myLatLng,
     map: map,
