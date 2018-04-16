@@ -1,0 +1,11 @@
+<form class="form-group col-md-2 col-md-offset-5">
+    <input class="form-control" type="email" required autocomplete="email" ng-model="email">
+    <br/>
+    <input class="form-control ovr-form" required autocomplete="password" type="password" placeholder="Mot de passe" ng-model="password">
+    <br/>
+    <button class="ovr-button" ng-click="signIn()"><span class="ovr-text-connexion">Connexion</span></button>
+    <br/>
+    <div class="form-group">
+        <p class=" ovr-info-danger" ng-show="errorSignIn">{{signInError}}</p>
+    </div>
+</form>
