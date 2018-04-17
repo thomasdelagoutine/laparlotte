@@ -23,8 +23,7 @@
 
 .parlotte-para-justify {
     text-align: justify;
-    font-family: paraFont;
-    font-weight: 800;
+    font-family: Calibri;
     font-size: 15pt;
 }
 
@@ -396,4 +395,25 @@ main {
     width: 100%;
     height: 1rem;
     text-transform: uppercase;
+}
+
+.parlotte-event-image{
+    width: 100%;
+}
+
+.parlotte-event-title{
+    text-align : left;
+    background: #5c5c5c;
+    padding: 6px;
+    color: #d5d5d5;
+}
+
+.parlotte-event-text{
+    text-align: justify;
+    background: #dbdbdb;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    font-family: Calibri;
 }
