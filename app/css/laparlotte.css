@@ -417,3 +417,8 @@ main {
     padding-bottom: 10px;
     font-family: Calibri;
 }
+
+.parlotte-event-info{
+    text-align: justify;
+    font-family: Calibri;
+}
