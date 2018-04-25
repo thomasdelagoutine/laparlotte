@@ -20,6 +20,10 @@ app.config(['$routeProvider',
                 templateUrl: 'modules/auth/auth.html',
                 controller: 'authController'
             })
+            .when('/sitemap',{
+                templateUrl : 'sitemap/sitemap.xml',
+                controller: 'homeController'
+            })
             .otherwise({
                 redirectTo: '/home'
             });
