@@ -10,6 +10,9 @@ app.controller('mainCtrl', ['$scope', '$location', '$firebaseObject', '$firebase
     function ($scope, $location, $firebaseObject, $firebaseAuth, $sce) {
         //Initialisation
         var ref = firebase.database().ref();
+        $scope.isEventCreated = false;
+        $scope.isEventError = false;
+        $scope.errorSave = "";
         _getProfileInfo().then(function (aTabEvent) {
             $scope.tabEvents = aTabEvent;
             $scope.$apply();
@@ -23,7 +26,7 @@ app.controller('mainCtrl', ['$scope', '$location', '$firebaseObject', '$firebase
          * @private
          */
         function _getProfileInfo() {
-            return firebase.database().ref('/events/').once('value').then(function (pEvents) {
+            return firebase.database().ref('/events/IpvdRu6xphhEDa52yYgApiE5Xq52/').once('value').then(function (pEvents) {
                 var tabEvents = [];
                 var aEvents = pEvents.val();
                 angular.forEach(aEvents, function (aEvent) {
@@ -82,18 +85,47 @@ app.controller('mainCtrl', ['$scope', '$location', '$firebaseObject', '$firebase
                 var pTime = $scope.timeEvent;
                 var pPhotoLink = $scope.photoLinkEvent;
                 var pCurrentUserUid = currentUser = firebase.auth().currentUser.uid;
-                firebase.database().ref('events/' + pCurrentUserUid).set({
+                var postData = {
                     date: pDate,
                     description: pDescription,
                     linkSoundCloud: pLinkSoundCloud,
                     name: pName,
                     time: pTime,
                     urlPhoto: pPhotoLink
+                };
+                // Get a key for a new Post.
+                var newPostKey = firebase.database().ref().child('events').push().key;
+                // Write the new post's data simultaneously in the posts list and the user's post list.
+                var updates = {};
+                updates['/events/' + pCurrentUserUid + '/' + newPostKey] = postData;
+                return firebase.database().ref().update(updates).then(function (aResult) {
+                    console.log("OK");
+                    $scope.isEventCreated = true;
+                    $scope.isEventError = false;
+                    _resetInput();
+                    $scope.$apply();
+                }).catch(function (e) {
+                    console.log("error : " + e);
+                    $scope.isEventError = true;
+                    $scope.isEventCreated = false;
+                    $scope.errorSave = "Erreur durant l'enregistrement";
                 });
             } else {
-                console.log("Tous les champs ne sont pas renseignés")
+                console.log("Tous les champs ne sont pas renseignés");
+                $scope.isEventError = true;
+                $scope.isEventCreated = false;
+                $scope.errorSave = "Il manque un champs à renseigner ;)";
             }
 
+        };
+
+        function _resetInput() {
+            $scope.dateEvent = "";
+            $scope.descriptionEvent = "";
+            $scope.nameEvent = "";
+            $scope.timeEvent = "";
+            $scope.photoLinkEvent = "";
+            $scope.linkSoundCloudEvent = "";
         }
 
     }]);

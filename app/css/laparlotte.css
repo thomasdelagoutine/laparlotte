@@ -471,11 +471,12 @@ main {
     background: #5c5c5c;
     padding: 6px;
     color: #d5d5d5;
+    font-family: paraFont;
 }
 
 .parlotte-event-text {
     text-align: justify;
-    background: #dbdbdb;
+    background: #eeeeef;
     padding: 0px;
     padding-left: 20px;
     padding-right: 20px;
@@ -496,4 +497,16 @@ main {
 .btn-parlotte{
     cursor: pointer;
     margin-bottom: 20px;
+}
+
+.error-message-parlotte{
+    background-color: #f05252;
+    padding: 10px;
+    margin: 10px;
+}
+
+.valid-message-parlotte{
+    background-color: #4af064;
+    padding: 10px;
+    margin: 10px;
 }
