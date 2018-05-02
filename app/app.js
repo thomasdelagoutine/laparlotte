@@ -1,7 +1,7 @@
 /**
  * Created by Thomas on 14/04/2018.
  */
-var app = angular.module('laParlotte', ['ngRoute','firebase']);
+var app = angular.module('laParlotte', ['ngRoute','firebase','ui.bootstrap']);
 
 app.config(['$routeProvider',
     function($routeProvider) {

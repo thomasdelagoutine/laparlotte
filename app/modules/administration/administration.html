@@ -1,0 +1,136 @@
+<div class="row parlotte-administration">
+    <div class="col-md-12">
+        <h2 class="parlotte-administration-title">Administration</h2>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+        <button type="submit" class="btn btn-default btn-parlotte" data-ng-click="displayAdd()">
+            Ajouter
+        </button>
+        <button type="submit" class="btn btn-default btn-parlotte" data-ng-click="displayUpdate()">
+            Modifier
+        </button>
+        <button type="submit" class="btn btn-default btn-parlotte" data-ng-click="displayDelete()">
+            Supprimer
+        </button>
+        <button type="submit" class="btn btn-default btn-parlotte" data-ng-click="deconnexion()">
+            Deconnexion
+        </button>
+    </div>
+    <hr>
+    <div class="col-md-12 parlotte-administration-section" ng-show="addDisplay">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                <div class="col-md-12">
+                    <h3 class="parlotte-sub-title parlotte-administration-title">Ajouter un évenement</h3>
+                </div>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-12 form-group">
+                            <label for="date">Date</label>
+                            <input type="text" ng-model="dateEvent" id="date" class="form-control"
+                                   placeholder="Date (ex : 18 mai 2018)">
+                        </div>
+                    </div>
+                    <div class="form-group form-group">
+                        <div class="col-sm-12">
+                            <label for="Description">Description</label>
+                                <textarea title="Description" ng-model="descriptionEvent" id="Description"
+                                          placeholder="Description"
+                                          style="height: 200px" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12 form-group">
+                            <label for="Description">Lien Sound Cloud <i class="fa fa-soundcloud"></i></label>
+                            <input type="text" ng-model="linkSoundCloudEvent" id="linkSoundCloudEvent"
+                                   class="form-control"
+                                   placeholder="linkSoundCloud">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12 form-group">
+                            <label for="evenementName">Description</label>
+                            <input type="text" ng-model="nameEvent" id="evenementName" class="form-control"
+                                   placeholder="Nom de l'évenement (ex: Concert de blalbla)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12 form-group">
+                            <label for="Heure">Heure</label>
+                            <input type="text" ng-model="timeEvent" id="Heure" class="form-control"
+                                   placeholder="Heure (ex: 19:00)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12 form-group">
+                            <label for="urlPhoto">Lien vers la photo</label>
+                            <input type="text" ng-model="photoLinkEvent" id="urlPhoto" class="form-control"
+                                   placeholder="Lien vers photo (éviter les liens trop longs ...)">
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="col-md-12 form-group">
+                        <button type="submit" class=" btn btn-default btn-parlotte" data-ng-click="saveEvent()">
+                            Enregistrer !
+                        </button>
+                    </div>
+                    <div class="col-md-12 valid-message-parlotte" ng-show="isEventCreated">
+                        <p><b>Evenement enregistré ! </b></p>
+                    </div>
+                    <div class="col-md-12 error-message-parlotte" ng-show="isEventError">
+                        <p><b>Erreur : {{errorSave}}</b></p>
+                    </div>
+                    <br/>
+                    <div class="col-md-12">
+                        <i class=""><b>Aide : </b>Pour récupérer le lien de SoundCloud, voici les étapes à
+                            réaliser
+                            (très facile) :</i>
+                        <ol type="1">
+                            <li>Aller sur la page SoundCloud de la musique à récupérer</li>
+                            <li>Appuyer sur partager</li>
+                            <li>Aller sur l'onglet "intérgrer"</li>
+                            <li>Copier la section code</li>
+                            <li>Coller la section code dans un editeur de texte</li>
+                            <li>Récupérer la partie indiquée par src="(partie à copier)"</li>
+                            <li>Coller cette partie dans le champs linkSoundCloud</li>
+                        </ol>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12" ng-show="updateDisplay">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12" ng-show="deleteDisplay">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                <div class="col-md-12">
+                    <h3 class="parlotte-sub-title parlotte-administration-title">Supprimer un évenement</h3>
+                </div>
+                <div class="col-md-12">
+                    <table class="table table-hover">
+                        <tr ng-repeat="event in listEvents">
+                            <td>{{event.date}}</td>
+                            <td>{{event.name}}</td>
+                            <td>
+                                <button type="submit" class=" btn btn-default btn-parlotte"
+                                        data-ng-click="deleteEvent(event.key)">
+                                    Supprimer !
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

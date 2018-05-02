@@ -349,7 +349,6 @@ footer p {
     margin: 0;
 }
 
-
 img::selection {
     background: transparent;
 }
@@ -491,22 +490,29 @@ main {
 
 .parlotte-administration {
     margin-top: 5%;
-    height: 500px;
 }
 
-.btn-parlotte{
+.btn-parlotte {
     cursor: pointer;
     margin-bottom: 20px;
 }
 
-.error-message-parlotte{
+.error-message-parlotte {
     background-color: #f05252;
     padding: 10px;
     margin: 10px;
 }
 
-.valid-message-parlotte{
+.valid-message-parlotte {
     background-color: #4af064;
     padding: 10px;
     margin: 10px;
+}
+
+.parlotte-administration-title {
+    text-align: center;
+}
+
+.parlotte-administration-section {
+    font-family: Calibri;
 }

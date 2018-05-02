@@ -13,25 +13,24 @@
     <script src="library/js/angular.min.js"></script>
     <script src="library/js/angular-route.min.js"></script>
     <script src="library/js/jquery-3.1.1.js"></script>
+    <script src="library/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
     <!-- Angular files -->
     <script src="app.js"></script>
     <script src="mainController.js"></script>
-    <script src="modules/administrationController.js"></script>
+    <script src="modules/administration/administrationController.js"></script>
+    <script src="modules/auth/authController.js"></script>
+    <script src="modules/home/homeController.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvYx5o4kCzSqnJGrika3kUxNj33KEgLUo&sensor=false"></script>
-
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.js"></script>
-
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <script>
@@ -68,7 +67,7 @@
 <body id="page-top" data-ng-controller="mainCtrl">
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" ng-show="!openAuth" id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger parlotte-menu" href="#page-top">La parlotte</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -103,7 +102,7 @@
 </nav>
 
 <!-- Intro Header -->
-<header class="masthead">
+<header class="masthead" ng-show="!openAuth">
     <div class="intro-body">
         <div class="container">
             <div class="row">
@@ -120,291 +119,20 @@
 </header>
 
 <!-- Le concept -->
-<section id="concept" class="content-section text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mx-auto">
-                <h1 class=" parlotte-title">Le concept</h1>
-                <p class=" parlotte-para-justify">Situé à Aussillon village dans l'ancienne école communale , rue du
-                    Général de Gaulle,
-                    la Parlotte est un lieu atypique géré par l'association l'Auberge Espagnole, favorisant les
-                    rencontres
-                    et l'accès à la culture pour tous. </p>
-                <div class="row parlotte-col">
-                    <div class="col-md-4 col-xs-12">
-                        <h3 class="parlotte-sub-title"><b>La Parlotte, un lieu </b></h3>
-                        <p class="parlotte-para-justify">Un lieu où tu peux boire un coup, participer à des ateliers,
-                            écouter un
-                            concert, jouer à des jeux de société, acheter du pain, goûter et prendre l'apéro !</p>
-                    </div>
-                    <div class="col-md-4 col-xs-12">
-                        <h3 class="parlotte-sub-title"><b>La parlotte, un laboratoire </b></h3>
-                        <p class="parlotte-para-justify">Dans ce petit lieu, tout est pensé pour que les gens aient
-                            envie de se rencontrer, de découvrir, d'apprendre, bref d'être bien.
-                        </p>
-                    </div>
-                    <div class="col-md-4 col-xs-12">
-                        <h3 class="parlotte-sub-title"><b>La Parlotte, une histoire </b></h3>
-                        <p class="parlotte-para-justify">Des amis, une association, une envie, des expériences et une
-                            seule
-                            motivation <em> "plus on des de fous, plus on rit!"</em>, et c'est partie!
-                            L'association compte aujourd'hui un conseil d'administation de 6 personnes et plusieurs
-                            adhérents.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Le marque de fabrique -->
-<section id="marque" class="content-section text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mx-auto">
-                <h1 class="parlotte-title">La marque de fabrique</h1>
-                <div class="row parlotte-col">
-                    <div class="col-md-4 col-xs-12">
-                        <h3 class="parlotte-sub-title"><b> Les concerts</b></h3>
-                        <p class="parlotte-para-justify">Parce qu'on a pas toujours la chance de voir un spectacle
-                            vivant,
-                            la Parlotte te propose un concert convivial et de qualité un vendredi sur deux à 19h30.</p>
-                    </div>
-                    <div class="col-md-4 col-xs-12">
-                        <h3 class="parlotte-sub-title"><b> L'apéro des initiatives</b></h3>
-                        <p class="parlotte-para-justify">Un vendredi par mois à 19h30, la Parlotte invite des
-                            personnalités actives
-                            dans le territoire.</p>
-                    </div>
-                    <div class="col-md-4 col-xs-12">
-                        <h3 class="parlotte-sub-title"><b> Les jeux de société</b></h3>
-                        <p class="parlotte-para-justify">A la Parlotte, on te propose une soixantaine de jeu de
-                            société pour que tu puisse t'éclater. Le dernier vendredi du mois, on fait même une soirée
-                            rien que pour ça !</p>
-                    </div>
-                    <div class="col-md-4 col-xs-12">
-                        <h3 class="parlotte-sub-title"><b>Ateliers parents - enfants</b></h3>
-                        <p class="parlotte-para-justify">Chaque mercredi, de 15 heures à 17 heures, on propose un
-                            atelier
-                            pour
-                            que les plus petits échangent avec les plus grands!
-                            Des intervenants et tout un tas de gens pour passer un bon moment!</p>
-                    </div>
-                    <div class="col-md-4 col-xs-12">
-                        <h3 class="parlotte-sub-title"><b>Arts créatifs</b></h3>
-                        <p class="parlotte-para-justify">Chaque vendredi de 15h à 17h, on te propose de dévoiler ta
-                            flamme créative autour d'ateliers.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Miam miam -->
-<section id="miammiam" class="content-section text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mx-auto">
-                <h1 class="parlotte-title">Tapas et goûters</h1>
-                <img class="parlotte-image" src="img/bagel.jpg" alt="img/bagel.jpg"/>
-                <br/>
-                <p class="parlottte-para-centered parlotte-para-justify">Des gâteaux tout frais et fait maison avec de
-                    bons produits, et des assiettes
-                    de tapas locales pour l'apéro.</p>
-                <p class="parlottte-para-centered parlotte-para-justify">Nous tentons de faire des prix accessibles à
-                    tous afin que tout un
-                    chacun puisse venir dans notre laboratoire de convivialité.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Glou glou -->
-<section id="glouglou" class="content-section text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mx-auto">
-                <h1 class="parlotte-title">Boissons</h1>
-                <img class="parlotte-image" src="img/cafe.jpg" alt="img/cafe.jpg"/>
-                <p class="parlottte-para-centered parlotte-para-justify">Des boissons digne d'un vrai salon de thé,
-                    quelques bières, un peu de
-                    vin et des jus de fruits tout frais!
-                    Tout ça "made in local" !
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Event section -->
-<section id="event" class="content-section text-center" data-ng-controller="mainCtrl">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mw-auto">
-                <h1 class="parlotte-title">Evenements</h1>
-                <div class="row" data-ng-repeat="event in tabEvents">
-                    <div class="col-lg-12 mw-auto"><h4 class="parlotte-event-title"><span>{{event.date}} : </span>{{event.name}}
-                    </h4></div>
-                    <div class="col-md-2 col-xs-12">
-                        <img class="parlotte-event-image" src="{{event.urlPhoto}}" alt="img/cafe.jpg"/>
-                        <br>
-                        <p class="parlotte-event-info"><b>Horraire : </b>{{event.time}}
-                            <br>
-                            <b>Lieu : </b>La parlotte
-                            <br>
-                            <b>Prix : </b>Gratuit</p>
-                    </div>
-                    <div class="col-md-10 col-xs-12">
-                        <p class="parlotte-event-text">{{event.description}}</p>
-                        <div class="col-md-12 col-sm-12">
-                            <iframe width="100%" scrolling="no" frameborder="no" allow="autoplay"
-                                    src="{{event.linkSoundCloud}}">
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-                <br>
-            </div>
-        </div>
+<div ng-view>
 
-    </div>
-
-</section>
-<!-- Contact Section -->
-<section id="contact" class="content-section text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mx-auto">
-                <h1 class="parlotte-title">Contacter la Parlotte</h1>
-                <p class="parlottte-para-centered parlotte-para-justify">Contactez nous pour vos questions ou remarques,
-                    etc ... Nous serons ravis
-                    de parlotter avec vous!</p>
-                <ul class="list-inline banner-social-buttons">
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com/Parlotte.association/" class="btn btn-default btn-lg">
-                            <i class="fa fa-facebook fa-fw"></i>
-                            <span class="network-name">Facebook</span>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="mailto:laparlotte.association@gmail.com" target="_blank"
-                           class="btn btn-default btn-lg">
-                            <i class="fa fa-envelope fa-fw"></i>
-                            <span class="network-name"></span>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+</div>
 <!-- Map Section -->
-<div id="map"></div>
+<div id="map" ng-show="!openAuth"></div>
 
 <!-- Footer -->
-<footer>
+<footer ng-show="!openAuth">
     <div class="container text-center">
         <p>Copyright &copy; La Parlotte 2018 - Site réalisé par <a
                 href="https://portefoliothomasdelagoutine.firebaseapp.com/" target="_blank">Thomas de Lagoutine</a></p>
         <p><a data-ng-click="authAdmin()">Administration</a></p>
-        <div ng-show="openAuth && !isConnected()" class="parlotte-administration">
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <form class="form-horizontal">
-                        <div class="form-group">
-                            <label class="sr-only">Identifiant</label>
-                            <input type="email" class="form-control" ng-model="email" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label class="sr-only">Mot de passe</label>
-                            <input type="password" class="form-control" ng-model="password"
-                                   placeholder="Password">
-                        </div>
-                        <button type="submit" class="btn btn-default btn-parlotte" data-ng-click="connexion()">
-                            Connexion
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div ng-show="isConnected()" class="parlotte-administration">
-            <h3 class="parlotte-sub-title">Ajouter un évenement</h3>
-            <button type="submit" class="btn btn-default btn-parlotte" data-ng-click="deconnexion()">Deconnexion
-            </button>
-            <br/>
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-8">
-                    <form class="form-horizontal">
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                <input type="text" ng-model="dateEvent" id="date" class="form-control"
-                                       placeholder="Date (ex : 18 mai 2018)">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                <textarea title="Description" ng-model="descriptionEvent" id="Description"
-                                          placeholder="Description"
-                                          style="height: 200px" class="form-control"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                <input type="text" ng-model="linkSoundCloudEvent" id="linkSoundCloudEvent"
-                                       class="form-control"
-                                       placeholder="linkSoundCloud">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                <input type="text" ng-model="nameEvent" id="evenementName" class="form-control"
-                                       placeholder="Nom de l'évenement (ex: Concert de blalba)">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                <input type="text" ng-model="timeEvent" id="Heure" class="form-control"
-                                       placeholder="Heure (ex:19:00)">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                <input type="text" ng-model="photoLinkEvent" id="urlPhoto" class="form-control"
-                                       placeholder="Lien vers photo">
-                            </div>
-                        </div>
-                        <br/>
-                        <div class="col-md-10">
-                            <button type="submit" class=" btn btn-default btn-parlotte" data-ng-click="saveEvent()">
-                                Enregistrer !
-                            </button>
-                        </div>
-                        <div class="col-md-10 valid-message-parlotte" ng-show="isEventCreated">
-                            <p><b>Evenement enregistré ! </b></p>
-                        </div>
-                        <div class="col-md-10 error-message-parlotte" ng-show="isEventError">
-                            <p><b>Erreur : {{errorSave}}</b></p>
-                        </div>
-                        <br/>
-                        <div class="col-md-10">
-                            <i class=""><b>Aide : </b>Pour récupérer le lien de SoundCloud, voici les étapes à réaliser
-                                (très facile) :</i>
-                            <ol type="1">
-                                <li>Aller sur la page SoundCloud de la musique à récupérer</li>
-                                <li>Appuyer sur partager</li>
-                                <li>Aller sur l'onglet "intérgrer"</li>
-                                <li>Copier la section code</li>
-                                <li>Coller la section code dans un editeur de texte</li>
-                                <li>Récupérer la partie indiquée par src="(partie à copier)"</li>
-                                <li>Coller cette partie dans le champs linkSoundCloud</li>
-                            </ol>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+
+
     </div>
 </footer>
 
