@@ -12,6 +12,8 @@ app.controller('administrationController', ['$scope', '$location', '$firebaseObj
         $scope.addDisplay = true;
         $scope.updateDisplay = false;
         $scope.deleteDisplay = false;
+        $scope.openUpdate = false;
+        $scope.updatedEvent = null;
         $scope.$broadcast("administration", true);
 
         /**
@@ -23,7 +25,6 @@ app.controller('administrationController', ['$scope', '$location', '$firebaseObj
                 && $scope.timeEvent && $scope.photoLinkEvent) {
                 var pDate = $scope.dateEvent;
                 var pDescription = $scope.descriptionEvent;
-                var pLinkSoundCloud = $scope.linkSoundCloudEvent;
                 var pName = $scope.nameEvent;
                 var pTime = $scope.timeEvent;
                 var pPhotoLink = $scope.photoLinkEvent;
@@ -31,7 +32,6 @@ app.controller('administrationController', ['$scope', '$location', '$firebaseObj
                 var postData = {
                     date: pDate,
                     description: pDescription,
-                    linkSoundCloud: pLinkSoundCloud,
                     name: pName,
                     time: pTime,
                     urlPhoto: pPhotoLink
@@ -46,6 +46,10 @@ app.controller('administrationController', ['$scope', '$location', '$firebaseObj
                     $scope.isEventCreated = true;
                     $scope.isEventError = false;
                     _resetInput();
+                    _getEventList().then(function (aTabEvent) {
+                        $scope.listEvents = aTabEvent;
+                        $scope.$apply();
+                    });
                     $scope.$apply();
                 }).catch(function (e) {
                     console.log("error : " + e);
@@ -97,21 +101,24 @@ app.controller('administrationController', ['$scope', '$location', '$firebaseObj
             $scope.addDisplay = true;
             $scope.updateDisplay = false;
             $scope.deleteDisplay = false;
+            $scope.openUpdate = false;
         };
         $scope.displayUpdate = function () {
             $scope.addDisplay = false;
             $scope.updateDisplay = true;
             $scope.deleteDisplay = false;
+            $scope.openUpdate = false;
         };
 
         $scope.displayDelete = function () {
             $scope.addDisplay = false;
             $scope.updateDisplay = false;
             $scope.deleteDisplay = true;
+            $scope.openUpdate = false;
         };
 
         /**
-         * Fonction pour supprimer un evenement.
+         * Fonction pour supprimer un évenement.
          * @param pEventId
          * @returns {*}
          */
@@ -126,5 +133,45 @@ app.controller('administrationController', ['$scope', '$location', '$firebaseObj
                 }).catch(function (e) {
                     console.log("Erreur!" + e);
                 })
+        };
+
+        /**
+         * Fonction pour ouvrir la mise à jour d'évenement.
+         * @param pUpdatedEvent
+         */
+        $scope.openUpdateEvent = function (pUpdatedEvent) {
+            $scope.openUpdate = true;
+            $scope.updatedEvent = pUpdatedEvent;
+        };
+
+
+        /**
+         * Fonction pour mettre à jour un évenement.
+         * @param pEventId
+         * @returns {*}
+         */
+        $scope.updateEvent = function (pEventId) {
+            var postData = {
+                date: $scope.updatedEvent.date,
+                description: $scope.updatedEvent.description,
+                name: $scope.updatedEvent.name,
+                time: $scope.updatedEvent.time,
+                urlPhoto: $scope.updatedEvent.urlPhoto
+            };
+            var pCurrentUserUid = currentUser = firebase.auth().currentUser.uid;
+            var updates = {};
+            updates['/events/' + pCurrentUserUid + '/' + pEventId] = postData;
+            return firebase.database().ref().update(updates).then(function () {
+                console.log("OK");
+                $scope.isEventCreated = true;
+                $scope.isEventError = false;
+                $scope.openUpdate = false;
+                $scope.$apply();
+            }).catch(function (e) {
+                console.log("error : " + e);
+                $scope.isEventError = true;
+                $scope.isEventCreated = false;
+                $scope.errorSave = "Erreur durant l'enregistrement";
+            });
         };
     }]);
