@@ -29,7 +29,7 @@ app.controller('mainCtrl', ['$scope', '$location', '$firebaseObject', '$firebase
                 return false;
             }
         };
-        
+
         $scope.deconnexion = function () {
             auth.$signOut().then(function () {
                 console.log("Deconnecté");
@@ -46,6 +46,18 @@ app.controller('mainCtrl', ['$scope', '$location', '$firebaseObject', '$firebase
                 $scope.openAuth = true;
             }
         });
+
+        /**
+         * Fonction pour transformer une date du format date vers le format français. 
+         * @param pDate
+         * @returns {string}
+         */
+        $scope.convertToFrenchDate = function (pDate) {
+            var event = new Date(pDate);
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            var pDateEvent = event.toLocaleDateString('fr-FR', options);
+            return pDateEvent;
+        };
     }]);
 
 

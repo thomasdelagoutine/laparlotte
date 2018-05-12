@@ -23,6 +23,9 @@ app.controller('administrationController', ['$scope', '$location', '$firebaseObj
         $scope.saveEvent = function () {
             if ($scope.dateEvent && $scope.descriptionEvent && $scope.nameEvent
                 && $scope.timeEvent && $scope.photoLinkEvent) {
+                var event = new Date($scope.dateEvent);
+                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                var pDateEvent = $scope.dateEvent.toLocaleDateString('fr-FR', options);
                 var pDate = $scope.dateEvent;
                 var pDescription = $scope.descriptionEvent;
                 var pName = $scope.nameEvent;
@@ -30,6 +33,7 @@ app.controller('administrationController', ['$scope', '$location', '$firebaseObj
                 var pPhotoLink = $scope.photoLinkEvent;
                 var pCurrentUserUid = currentUser = firebase.auth().currentUser.uid;
                 var postData = {
+                    dateEvent: pDateEvent,
                     date: pDate,
                     description: pDescription,
                     name: pName,
