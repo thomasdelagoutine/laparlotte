@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6181e814-318c-4cbb-ac00-ca6992a4d26e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mainController.js" afterPath="$PROJECT_DIR$/app/mainController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/modules/administration/administration.html" afterPath="$PROJECT_DIR$/app/modules/administration/administration.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/modules/administration/administrationController.js" afterPath="$PROJECT_DIR$/app/modules/administration/administrationController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/laparlotte.css" afterPath="$PROJECT_DIR$/app/css/laparlotte.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/modules/auth/auth.html" afterPath="$PROJECT_DIR$/app/modules/auth/auth.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/modules/home/home.html" afterPath="$PROJECT_DIR$/app/modules/home/home.html" />
     </list>
     <ignored path="laparlotte.iws" />
@@ -30,7 +29,7 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-308">
+            <state relative-caret-position="-242">
               <caret line="3" column="71" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="71" />
               <folding>
                 <element signature="e#0#43#0" expanded="false" />
@@ -39,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="administration.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="administration.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/modules/administration/administration.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2212">
-              <caret line="115" column="65" selection-start-line="115" selection-start-column="65" selection-end-line="115" selection-end-column="65" />
+            <state relative-caret-position="323">
+              <caret line="183" column="26" selection-start-line="181" selection-start-column="20" selection-end-line="183" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#textarea#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#textarea#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#1;n#div#4;n#div#0;n#!!top" expanded="true" />
@@ -55,7 +54,7 @@
       <file leaf-file-name="administrationController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/modules/administration/administrationController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
+            <state relative-caret-position="-1981">
               <caret line="27" column="87" selection-start-line="25" selection-start-column="16" selection-end-line="27" selection-end-column="87" />
               <folding>
                 <element signature="e#0#43#0" expanded="false" />
@@ -67,8 +66,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/modules/home/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="128" column="124" selection-start-line="128" selection-start-column="93" selection-end-line="128" selection-end-column="124" />
+            <state relative-caret-position="316">
+              <caret line="113" column="40" selection-start-line="113" selection-start-column="40" selection-end-line="113" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -89,11 +88,33 @@
       <file leaf-file-name="mainController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/mainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+            <state relative-caret-position="-88">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#0#43#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="authController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/modules/auth/authController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="18" column="34" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#43#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/modules/auth/auth.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,16 +153,16 @@
         <option value="$PROJECT_DIR$/app/sitemap/sitemap.xml" />
         <option value="$PROJECT_DIR$/app/modules/administration.html" />
         <option value="$PROJECT_DIR$/app/modules/administrationController.js" />
-        <option value="$PROJECT_DIR$/app/modules/auth/auth.html" />
         <option value="$PROJECT_DIR$/app/modules/auth/authController.js" />
         <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/app/css/laparlotte.css" />
         <option value="$PROJECT_DIR$/app/modules/home/homeController.js" />
         <option value="$PROJECT_DIR$/app/modules/administration/administrationController.js" />
-        <option value="$PROJECT_DIR$/app/modules/home/home.html" />
-        <option value="$PROJECT_DIR$/app/mainController.js" />
         <option value="$PROJECT_DIR$/app/modules/administration/administration.html" />
+        <option value="$PROJECT_DIR$/app/mainController.js" />
+        <option value="$PROJECT_DIR$/app/modules/home/home.html" />
+        <option value="$PROJECT_DIR$/app/css/laparlotte.css" />
+        <option value="$PROJECT_DIR$/app/modules/auth/auth.html" />
       </list>
     </option>
   </component>
@@ -152,10 +173,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -288,6 +308,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -455,7 +479,7 @@
       <workItem from="1525114851487" duration="1987000" />
       <workItem from="1525164019179" duration="5077000" />
       <workItem from="1525289284380" duration="3000000" />
-      <workItem from="1525784509365" duration="8304000" />
+      <workItem from="1525784509365" duration="14081000" />
     </task>
     <task id="LOCAL-00001" summary="Modification des couleurs">
       <created>1508013388913</created>
@@ -489,20 +513,20 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86655000" />
+    <option name="totallyTimeSpent" value="92432000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="0" width="1936" height="1038" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19291754" sideWeight="0.49441788" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19312169" sideWeight="0.49441788" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2274326" sideWeight="0.5021142" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25791326" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25741398" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24967062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26611957" sideWeight="0.49788582" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2906287" sideWeight="0.49788582" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22661397" sideWeight="0.50558215" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39929742" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -711,36 +735,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/modules/auth/auth.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/library/js/ui-bootstrap-tpls-2.5.0.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/css/laparlotte.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11198">
-          <caret line="509" column="1" selection-start-line="509" selection-start-column="1" selection-end-line="509" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/modules/auth/authController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -810,7 +809,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-308">
+        <state relative-caret-position="-242">
           <caret line="3" column="71" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="71" />
           <folding>
             <element signature="e#0#43#0" expanded="false" />
@@ -818,9 +817,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/css/laparlotte.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/administration/administrationController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
+        <state relative-caret-position="-1981">
           <caret line="27" column="87" selection-start-line="25" selection-start-column="16" selection-end-line="27" selection-end-column="87" />
           <folding>
             <element signature="e#0#43#0" expanded="false" />
@@ -828,12 +835,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mainController.js">
+    <entry file="file://$PROJECT_DIR$/app/modules/administration/administration.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+        <state relative-caret-position="323">
+          <caret line="183" column="26" selection-start-line="181" selection-start-column="20" selection-end-line="183" selection-end-column="26" />
           <folding>
-            <element signature="e#0#43#0" expanded="false" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#1;n#div#4;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -850,20 +858,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/home/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="128" column="124" selection-start-line="128" selection-start-column="93" selection-end-line="128" selection-end-column="124" />
+        <state relative-caret-position="316">
+          <caret line="113" column="40" selection-start-line="113" selection-start-column="40" selection-end-line="113" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/modules/administration/administration.html">
+    <entry file="file://$PROJECT_DIR$/app/modules/auth/authController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2212">
-          <caret line="115" column="65" selection-start-line="115" selection-start-column="65" selection-end-line="115" selection-end-column="65" />
+        <state relative-caret-position="352">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="34" />
           <folding>
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#1;n#div#4;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#0#43#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/modules/auth/auth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

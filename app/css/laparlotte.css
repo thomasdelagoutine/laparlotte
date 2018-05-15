@@ -13,6 +13,7 @@
     font-family: paraFont;
     font-size: 20pt;
     font-weight: 100;
+    margin-left: 5%;
 }
 
 .parlotte-intro {
@@ -51,10 +52,10 @@
 }
 
 .parlotte-liste {
-    font-family: paraFont;
+    font-family: Calibri;
     list-style-type: none;
-    font-size: 20pt;
-    font-weight: bolder;
+    font-size: 14pt;
+    text-align: center;
 }
 
 .parlotte-header-title {
@@ -71,6 +72,10 @@
 .parlotte-image-col {
     width: 100%;
     height: 100%;
+}
+
+.parlotte-space{
+    height: 50px;
 }
 
 /*!
