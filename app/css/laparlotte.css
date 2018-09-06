@@ -37,6 +37,11 @@
     width: 30%;
 }
 
+.parlotte-image-mini{
+    margin-bottom: 20px;
+    width: 15%;
+}
+
 .parlotte-border {
     border-radius: 255px 15px 225px 15px/15px 225px;
     border: dashed 2px #41403e;
@@ -51,11 +56,27 @@
     margin-top: 100px;
 }
 
+.parlotte-avantage{
+    font-family: calibri;
+    font-size: 15pt;
+    text-align: left;
+    margin-left: 10%;
+}
+.parlotte-ul{
+    margin-left: 10%;
+}
 .parlotte-liste {
     font-family: Calibri;
     list-style-type: none;
     font-size: 14pt;
     text-align: center;
+}
+
+.parlotte-liste-doted {
+    font-family: Calibri;
+    list-style-type: square;
+    font-size: 14pt;
+    text-align: left;
 }
 
 .parlotte-header-title {
@@ -65,7 +86,7 @@
 
 .parlotte-menu {
     font-family: paraFont;
-    font-size: 18pt;
+    font-size: 14pt;
     font-weight: bolder;
 }
 
