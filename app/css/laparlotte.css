@@ -35,6 +35,7 @@
 .parlotte-image {
     margin-bottom: 20px;
     width: 30%;
+    margin-right: 2%;
 }
 
 .parlotte-image-mini{
@@ -86,7 +87,7 @@
 
 .parlotte-menu {
     font-family: paraFont;
-    font-size: 14pt;
+    font-size: 12pt;
     font-weight: bolder;
 }
 
