@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr" data-ng-app="laParlotte">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Cafe culturel la Parlotte à Aussillon village">
     <meta name="keywords" content="cafe culture aussillon village concert biere vin tapas mazamet tarn montagne noire">
     <meta name="author" content="Thomas de Lagoutine">
-
     <title>La parlotte</title>
-
     <!-- Library -->
     <script src="library/js/angular.min.js"></script>
     <script src="library/js/angular-route.min.js"></script>
@@ -28,7 +27,8 @@
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvYx5o4kCzSqnJGrika3kUxNj33KEgLUo&sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvYx5o4kCzSqnJGrika3kUxNj33KEgLUo&sensor=false">
+    </script>
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.js"></script>
     <!-- Firebase -->
@@ -48,111 +48,94 @@
         var defaultStorage = firebase.storage();
         var defaultDatabase = firebase.database();
     </script>
-
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
-          type="text/css">
+        type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
     <link href="css/laparlotte.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="img/if_coffee_216160.png"/>
-
+    <link rel="shortcut icon" type="image/x-icon" href="img/if_coffee_216160.png" />
 </head>
-
 <body id="page-top" data-ng-controller="mainCtrl">
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" ng-show="!openAuth" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand js-scroll-trigger parlotte-menu" href="#page-top">La parlotte</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" ng-show="!openAuth" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger parlotte-menu" href="#page-top">La parlotte</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
-            Menu
-            <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger parlotte-menu" href="#concept">Concept</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger parlotte-menu" href="#marque">Marque de fabrique</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger parlotte-menu" href="#miammiam">Tapas et goûters</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger parlotte-menu" href="#glouglou">Boissons</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger parlotte-menu" href="#event">Evenements</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger parlotte-menu" href="#entreprises">Services aux entreprises</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger parlotte-menu" href="#partenaires">Partenaires</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger parlotte-menu" href="#contact">Contact</a>
-                </li>
-            </ul>
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger parlotte-menu" href="#concept">Concept</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger parlotte-menu" href="#marque">Marque de fabrique</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger parlotte-menu" href="#miammiam">Tapas et goûters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger parlotte-menu" href="#glouglou">Boissons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger parlotte-menu" href="#event">Evenements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger parlotte-menu" href="#partenaires">Partenaires</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger parlotte-menu" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-
-<!-- Intro Header -->
-<header class="masthead" ng-show="!openAuth">
-    <div class="intro-body">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 mx-auto">
-                    <h1 class="brand-heading parlotte-header-title">La parlotte</h1>
-                    <p class="parlotte-intro">Laboratoire de convivialité</p>
-                    <a href="#concept" class="btn btn-circle js-scroll-trigger">
-                        <i class="fa fa-angle-double-down animated"></i>
-                    </a>
+    </nav>
+    <!-- Intro Header -->
+    <header class="masthead" ng-show="!openAuth">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 mx-auto">
+                        <h1 class="brand-heading parlotte-header-title">La parlotte</h1>
+                        <p class="parlotte-intro">Laboratoire de convivialité</p>
+                        <a href="#concept" class="btn btn-circle js-scroll-trigger">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+    </header>
+    <!-- Le concept -->
+    <div ng-view>
     </div>
-</header>
-
-<!-- Le concept -->
-<div ng-view>
-
-</div>
-<!-- Map Section -->
-<div id="map" ng-show="!openAuth"></div>
-
-<!-- Footer -->
-<footer ng-show="!openAuth">
-    <div class="container text-center">
-        <p>Copyright &copy; La Parlotte 2018 - Site réalisé par <a
-                href="https://portefoliothomasdelagoutine.firebaseapp.com/" target="_blank">Thomas de Lagoutine</a></p>
-        <p><a data-ng-click="authAdmin()">Administration</a></p>
-
-
-    </div>
-</footer>
-
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/popper/popper.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for this template -->
-<script src="js/grayscale.js"></script>
-
+    <!-- Map Section -->
+    <div id="map" ng-show="!openAuth"></div>
+    <!-- Footer -->
+    <footer ng-show="!openAuth">
+        <div class="container text-center">
+            <p>Copyright &copy; La Parlotte 2018 - Site réalisé par <a
+                    href="https://portefoliothomasdelagoutine.firebaseapp.com/" target="_blank">Thomas de Lagoutine</a>
+            </p>
+            <p><a data-ng-click="authAdmin()">Administration</a></p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/grayscale.js"></script>
 </body>
-
 </html>

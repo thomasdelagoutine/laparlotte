@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: laparlotte.fr
+Token: 3f126a45ef84c2710c8e1ed64aa9ba2f728d97a4bfbbf2cb4adb2f5858eac922
